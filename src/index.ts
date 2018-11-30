@@ -25,6 +25,7 @@ function render() {
 }
 
 render();
+$(".layout", el => (el.style.opacity = "1"));
 state.onChange(render);
 
 $("[data-change]", function(el) {
