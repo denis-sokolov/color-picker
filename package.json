@@ -1,0 +1,30 @@
+{
+  "name": "color-picker",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "ci": "npm run verify",
+    "format": "prettier --write 'src/**/*.ts' tsconfig.json",
+    "format-verify": "prettier --list-different 'src/**/*.ts' tsconfig.json",
+    "start": "NODE_ENV=development webpack-dev-server --client-log-level warning",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run typecheck && npm run format-verify"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "author": "Denis Sokolov",
+  "dependencies": {
+    "@types/color-convert": "^1.9.0",
+    "color-convert": "^1.9.3",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "prettier": "^1.15.2",
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.1.6",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}

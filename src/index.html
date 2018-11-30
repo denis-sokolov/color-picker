@@ -1,0 +1,123 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Color picker</title>
+<link rel=icon href="data:,">
+
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    margin: 0; padding: 0;
+    background: hsl(250, 20%, 94%);
+    user-select: none;
+  }
+  input { font-size: 100%; }
+  label { cursor: pointer; }
+
+  .layout {
+    margin: 50px auto;
+    max-width: 500px;
+  }
+    .layout > * {
+      margin-bottom: 50px;
+    }
+
+  .input {}
+    .input .description { margin-bottom: 5px }
+    #input-text {
+      min-height: 50px;
+      min-width: 270px;
+      padding: 10px;
+      vertical-align: middle;
+    }
+    #input-color {
+      opacity: 0
+    }
+
+  .current-color-syntaxes {
+    display: flex;
+    margin-bottom: 5px;
+  }
+    .current-color-syntaxes .hex { min-width: 90px; }
+    .current-color-syntaxes .rgb { min-width: 150px; }
+
+  .display-box {
+    height: 150px;
+    width: 100%;
+  }
+
+  .big-hsl {
+    align-items: center;
+    display: flex;
+    font-size: 200%;
+    padding: 40px 0;
+  }
+    .big-hsl > div:not(:first-child) {
+      margin-left: 30px
+    }
+    .big-hsl .less, .big-hsl .more {
+      position: absolute;
+      transition: opacity 100ms;
+      width: 100px;
+      height: 15px;
+    }
+    .big-hsl .less { margin-top: 0px; }
+    .big-hsl .more { margin-top: -65px; }
+    .big-hsl input {
+      border: 0;
+      min-height: 50px;
+      padding: 5px;
+      outline: 0;
+      width: 100px;
+    }
+
+  [data-change]:not(input) {
+    cursor: pointer;
+  }
+</style>
+
+<div class=layout>
+  <div>
+    <div class=current-color-syntaxes>
+      <span class=hex data-text=hex data-copiable></span>
+      <span class=rgb data-text=rgb data-copiable></span>
+      <span class=hsl data-text=hsl data-copiable></span>
+    </span>
+    </div>
+    <label for="input-color">
+      <div class=display-box data-bg=hex></div>
+    </label>
+  </div>
+  <div class=big-hsl>
+    <label for="big-hsl-h">HSL:</label>
+
+    <div>
+      <input id="big-hsl-h" type=number data-value=hue data-change=hue>
+      <div class=less data-bg=lessHueHex data-change=lessHue></div>
+      <div class=more data-bg=moreHueHex data-change=moreHue></div>
+    </div>
+
+    <div>
+      <input type=number data-value=saturation data-change=saturation>
+      <div class=less data-bg=lessSaturationHex data-change=lessSaturation></div>
+      <div class=more data-bg=moreSaturationHex data-change=moreSaturation></div>
+    </div>
+
+    <div>
+      <input type=number data-value=lightness data-change=lightness>
+      <div class=less data-bg=lessLightnessHex data-change=lessLightness></div>
+      <div class=more data-bg=moreLightnessHex data-change=moreLightness></div>
+    </div>
+  </div>
+  <div class=input>
+    <div class=description>
+      <label for="input-text">Paste a color:</label>
+    </div>
+    <input autofocus id=input-text type=text placeholder="#40bf80" data-change>
+    <input id="input-color" type=color value="#40bf80" data-change>
+  </div>
+</div>
