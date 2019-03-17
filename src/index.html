@@ -40,6 +40,12 @@
       opacity: 0
     }
 
+  .blend {
+    font-size: 80%;
+    margin-top: 5px;
+  }
+    .blend input { vertical-align: middle }
+
   .current-color-syntaxes {
     display: flex;
     margin-bottom: 5px;
@@ -119,7 +125,13 @@
     <div class=description>
       <label for="input-text">Paste a color:</label>
     </div>
-    <input autofocus id=input-text type=text placeholder="#40bf80" data-change>
+    <input autofocus id=input-text type=text placeholder="#40bf80" data-change=textInputColor>
     <input id="input-color" type=color value="#40bf80" data-change>
+
+    <div class=blend data-show-if=textInputBackgroundShown>
+      <label>Background color:
+        <input type=color data-change=textInputBackground data-value=textInputBackgroundHex>
+      </label>
+    </div>
   </div>
 </div>

@@ -9,6 +9,7 @@ const state = makeState();
 function render() {
   const accessors: { [key: string]: (el: HTMLElement, val: string) => void } = {
     bg: (el, val) => (el.style.backgroundColor = val),
+    "show-if": (el, val) => (el.hidden = !val),
     text: (el, val) => (el.innerText = val),
     value: (el, val) => ((el as HTMLInputElement).value = val)
   };
