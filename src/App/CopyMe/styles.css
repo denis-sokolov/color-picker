@@ -1,0 +1,16 @@
+.copyme {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+}
+
+.copyme .icon {
+  display: inline-block;
+  margin-left: 4px;
+  opacity: 0.2;
+  position: relative;
+  top: 0.15em;
+}

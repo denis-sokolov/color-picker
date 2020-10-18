@@ -1,0 +1,32 @@
+.gradient {
+  display: flex;
+  flex-direction: column;
+  /* Pixel rounding leads to checkerboard being sometimes visible */
+  /* margin-right: -1px; */
+  min-width: 200px;
+  user-select: none;
+}
+.gradient .gradient-itself {
+  min-height: 50px;
+}
+.gradient .outside-control {
+  display: flex;
+}
+.gradient .step {
+  position: relative;
+  border-bottom: 2px solid transparent;
+}
+.gradient .step.outside-rgb {
+  border-bottom-color: hsl(41, 100%, 44%);
+}
+.gradient .mark-scale {
+  position: relative;
+  height: 12px;
+}
+.gradient .mark {
+  font-size: 8px;
+  height: 12px;
+  position: absolute;
+  top: 2px;
+  width: 12px;
+}

@@ -1,0 +1,44 @@
+.app {
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  justify-content: center;
+  min-height: 100vh;
+
+  /**
+   * lch gradient
+   * https://davidjohnstone.net/pages/lch-lab-colour-gradient-picker
+   */
+  --bg-opacity: 0.3;
+  background: white
+    linear-gradient(
+      138deg,
+      hsla(308, 100%, 94%, var(--bg-opacity)) 0%,
+      hsla(301, 100%, 92%, var(--bg-opacity)) 10%,
+      hsla(300, 100%, 89%, var(--bg-opacity)) 20%,
+      hsla(275, 91%, 87%, var(--bg-opacity)) 30%,
+      hsla(248, 78%, 84%, var(--bg-opacity)) 40%,
+      hsla(224, 67%, 76%, var(--bg-opacity)) 50%,
+      hsla(211, 60%, 66%, var(--bg-opacity)) 60%,
+      hsla(202, 53%, 55%, var(--bg-opacity)) 70%,
+      hsla(194, 62%, 43%, var(--bg-opacity)) 80%,
+      hsla(187, 100%, 30%, var(--bg-opacity)) 90%,
+      hsla(183, 100%, 25%, var(--bg-opacity)) 100%
+    );
+}
+
+.app .main-column {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.app .footer {
+  font-size: 12px;
+}
+
+.app .footer a {
+  color: inherit;
+}

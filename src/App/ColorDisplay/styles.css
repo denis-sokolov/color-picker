@@ -1,0 +1,21 @@
+.color-display .color {
+  height: 200px;
+  width: 500px;
+}
+
+.color-display .main-format {
+  font-size: 48px;
+}
+
+.color-display .other-formats {
+  display: flex;
+  font-family: monospace;
+  justify-content: space-between;
+}
+.color-display .other-formats > * {
+  margin-right: 16px;
+}
+
+.color-display .outside-rgb {
+  color: hsl(41, 100%, 34%);
+}

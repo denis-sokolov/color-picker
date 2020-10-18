@@ -1,31 +1,35 @@
 {
-  "name": "color-picker",
-  "private": true,
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "ci": "npm run verify",
-    "format": "prettier --write 'src/**/*.ts' tsconfig.json",
-    "format-verify": "prettier --list-different 'src/**/*.ts' tsconfig.json",
-    "start": "NODE_ENV=development webpack-dev-server --client-log-level warning",
-    "typecheck": "tsc --noEmit",
+    "build": "snowpack build && rm -rf build/__snowpack__ build/web_modules build/*.js",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' '*.{js,json,md}'",
+    "format-verify": "prettier --check 'src/**/*.{js,jsx,ts,tsx}' '*.{js,json,md}'",
+    "start": "snowpack dev",
+    "typecheck": "tsc",
     "verify": "npm run typecheck && npm run format-verify"
-  },
-  "engines": {
-    "node": ">=10",
-    "npm": ">=6"
   },
   "author": "Denis Sokolov",
   "dependencies": {
-    "@types/color-convert": "^1.9.0",
-    "color-blend": "^2.0.3",
-    "color-convert": "^1.9.3",
-    "html-webpack-plugin": "^3.2.0",
-    "http-server": "^0.11.1",
-    "prettier": "^1.15.2",
-    "ts-loader": "^5.3.1",
-    "typescript": "^3.1.6",
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.11"
-  }
+    "@babel/preset-env": "^7.11.5",
+    "@csstools/convert-colors": "^2.0.0",
+    "@snowpack/plugin-react-refresh": "^2.3.1",
+    "@snowpack/plugin-webpack": "^2.0.15",
+    "@theorem/react": "^2.3.0",
+    "@types/d3-color": "^2.0.0",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/snowpack-env": "^2.3.0",
+    "d3-color": "^2.0.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.11.0",
+    "snowpack": "^2.13.3",
+    "typescript": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=12.14",
+    "npm": ">=6.14"
+  },
+  "name": "color-picker",
+  "private": true
 }
