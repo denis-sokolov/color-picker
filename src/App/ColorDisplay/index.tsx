@@ -12,10 +12,8 @@ export function ColorDisplay(props: Props) {
   const { color } = props;
   return (
     <div className="color-display">
-      <CopyMe contents={color.asPrettyHsl().ignoringPrecision}>
-        <div className="main-format">
-          {color.asPrettyHsl().ignoringPrecision}
-        </div>
+      <CopyMe contents={color.asPrettyLch()}>
+        <div className="main-format">{color.asPrettyLch()}</div>
       </CopyMe>
       <div style={{ height: 0 }} />
       <div className="other-formats">
@@ -25,7 +23,9 @@ export function ColorDisplay(props: Props) {
         <CopyMe contents={color.asPrettyRgb().ignoringPrecision}>
           {color.asPrettyRgb().ignoringPrecision}
         </CopyMe>
-        <CopyMe contents={color.asPrettyLch()}>{color.asPrettyLch()}</CopyMe>
+        <CopyMe contents={color.asPrettyHsl().ignoringPrecision}>
+          {color.asPrettyHsl().ignoringPrecision}
+        </CopyMe>
       </div>
       <div style={{ height: 16 }} />
       <div
