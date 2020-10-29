@@ -9,13 +9,12 @@ type Props = {
   from: Color;
   markAtRatio?: number;
   onChange: (color: Color) => void;
+  steps?: number;
   to: Color;
 };
 
-const steps = 30;
-
 export function Gradient(props: Props) {
-  const { from, markAtRatio, onChange, to } = props;
+  const { from, markAtRatio, onChange, to, steps = 30 } = props;
   const [ref, isMouseHeld] = useMouseHeld();
   const colors = computeColors(from, to, steps);
 
