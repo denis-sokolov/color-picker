@@ -11,8 +11,8 @@ function normalizeHue(h: number) {
   return h;
 }
 
-function round(number: number) {
-  const coef = 1;
+function round(number: number, decimals = 0) {
+  const coef = Math.pow(10, decimals);
   return Math.round(number * coef) / coef;
 }
 
@@ -83,7 +83,7 @@ export class ColorClass {
       `${round(this.luminance)}%`,
       ` ${round(this.chroma)}`,
       ` ${round(this.hue)}`,
-      this.opacity < 1 ? ` / ${this.opacity}` : "",
+      this.opacity < 1 ? ` / ${round(this.opacity, 2)}` : "",
       `)`,
     ].join("");
   }
@@ -99,7 +99,7 @@ export class ColorClass {
         `${round(h) % 360},`,
         ` ${round(clamp(s, 0, 100))}%,`,
         ` ${round(clamp(l, 0, 100))}%`,
-        hasAlpha ? `, ${this.opacity}` : "",
+        hasAlpha ? `, ${round(this.opacity, 2)}` : "",
         `)`,
       ].join("");
       return res;
@@ -111,7 +111,7 @@ export class ColorClass {
       [
         this.opacity < 1 ? `rgba(` : `rgb(`,
         `${round(r)}, ${round(g)}, ${round(b)}`,
-        this.opacity < 1 ? `, ${this.opacity}` : ``,
+        this.opacity < 1 ? `, ${round(this.opacity, 2)}` : ``,
         `)`,
       ].join("")
     );
