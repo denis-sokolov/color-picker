@@ -1,8 +1,29 @@
-import { Color, colorFromRgb, colorFromHsl } from "@lib/color";
+import { Color, colorFromRgb, colorFromHsl, colorFromLch } from "@lib/color";
 import {} from "d3-color";
 import { keyword2rgb } from "@csstools/convert-colors";
 
 export function parse(rawInput: string): Color | "unparsable" {
+  const lch = rawInput
+    .toLowerCase()
+    .match(
+      /^\s*lch\s*\(\s*([0-9.]+)\s*%\s+([0-9.]+)\s+([0-9.]+)(\s+([0-9.]+\s*%?))?\s*\)\s*$/
+    );
+
+  try {
+    if (lch) {
+      const o = lch[5] || "100%";
+      const opacity = o.endsWith("%")
+        ? Number(o.replace(/%$/, "")) / 100
+        : Number(o);
+      return colorFromLch(
+        Number(lch[1]),
+        Number(lch[2]),
+        Number(lch[3]),
+        opacity
+      );
+    }
+  } catch (err) {}
+
   const input = rawInput.replace(/[\s;]/g, "").toLowerCase();
 
   const hexShort = input.match(/^#?\s*([a-f0-9]{3})([0-9a-f])?$/);
