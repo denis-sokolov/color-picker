@@ -32,7 +32,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 800px;
+}
+
+@media (min-width: 495px) {
+  .app .main-column {
+    min-width: 487px;
+  }
 }
 
 .app .footer {
