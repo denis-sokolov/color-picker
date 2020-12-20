@@ -54,7 +54,7 @@ export function Gradient(props: Props) {
               colors
                 .map((c, i) => {
                   return (
-                    c.asCss().ignoringPrecision + " " + (i * 100) / steps + "%"
+                    c.asCss().approximation + " " + (i * 100) / steps + "%"
                   );
                 })
                 .join(","),

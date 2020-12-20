@@ -1,6 +1,5 @@
 import React from "react";
-import type { Color } from "@lib/color";
-import { parse } from "./parse";
+import { Color, colorFromString } from "@lib/color";
 import "./styles.css";
 
 type Props = {
@@ -17,11 +16,11 @@ export function Input(props: Props) {
         onInput={(e) => {
           const el = e.target;
           if (!(el instanceof HTMLInputElement)) return;
-          const parsed = parse(el.value);
+          const parsed = colorFromString(el.value);
           if (parsed !== "unparsable") onChangeColor(parsed);
         }}
         onFocus={(e) => e.target.select()}
-        placeholder={color.asPrettyHsl().ignoringPrecision}
+        placeholder={color.asPrettyHsl().approximation}
       />
     </div>
   );

@@ -15,9 +15,9 @@ export default function App() {
         <ColorDisplay color={color} />
         <div style={{ height: 30 }} />
         <Gradient
-          from={color.withLuminance(0)}
-          markAtRatio={color.luminance / 100}
-          to={color.withLuminance(100)}
+          from={color.withLightness(0)}
+          markAtRatio={color.lightness / 100}
+          to={color.withLightness(100)}
           onChange={setColor}
         />
         <div style={{ height: 12 }} />

@@ -2,7 +2,7 @@ import { Color, colorFromLch } from "@lib/color";
 
 export function computeColor(from: Color, to: Color, coef: number) {
   const color = colorFromLch(
-    from.luminance + (to.luminance - from.luminance) * coef,
+    from.lightness + (to.lightness - from.lightness) * coef,
     from.chroma + (to.chroma - from.chroma) * coef,
     from.hue + (to.hue - from.hue) * coef,
     from.opacity + (to.opacity - from.opacity) * coef

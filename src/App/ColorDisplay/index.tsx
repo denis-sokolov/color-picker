@@ -17,14 +17,14 @@ export function ColorDisplay(props: Props) {
       </CopyMe>
       <div style={{ height: 0 }} />
       <div className="other-formats">
-        <CopyMe contents={color.asPrettyHex().ignoringPrecision}>
-          {color.asPrettyHex().ignoringPrecision}
+        <CopyMe contents={color.asPrettyHex().approximation}>
+          {color.asPrettyHex().approximation}
         </CopyMe>
-        <CopyMe contents={color.asPrettyRgb().ignoringPrecision}>
-          {color.asPrettyRgb().ignoringPrecision}
+        <CopyMe contents={color.asPrettyRgb().approximation}>
+          {color.asPrettyRgb().approximation}
         </CopyMe>
-        <CopyMe contents={color.asPrettyHsl().ignoringPrecision}>
-          {color.asPrettyHsl().ignoringPrecision}
+        <CopyMe contents={color.asPrettyHsl().approximation}>
+          {color.asPrettyHsl().approximation}
         </CopyMe>
       </div>
       <div style={{ height: 16 }} />
@@ -40,7 +40,7 @@ export function ColorDisplay(props: Props) {
       <Checkerboard>
         <div
           className="color"
-          style={{ backgroundColor: color.asCss().ignoringPrecision }}
+          style={{ backgroundColor: color.asCss().approximation }}
         ></div>
       </Checkerboard>
     </div>
