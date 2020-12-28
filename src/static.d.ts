@@ -1,33 +1,33 @@
-declare module '*.css';
-declare module '*.svg' {
+declare module "*.css";
+declare module "*.svg" {
   const ref: string;
   export default ref;
 }
-declare module '*.bmp' {
+declare module "*.bmp" {
   const ref: string;
   export default ref;
 }
-declare module '*.gif' {
+declare module "*.gif" {
   const ref: string;
   export default ref;
 }
-declare module '*.jpg' {
+declare module "*.jpg" {
   const ref: string;
   export default ref;
 }
-declare module '*.jpeg' {
+declare module "*.jpeg" {
   const ref: string;
   export default ref;
 }
-declare module '*.png' {
+declare module "*.png" {
   const ref: string;
   export default ref;
 }
-declare module '*.webp' {
+declare module "*.webp" {
   const ref: string;
   export default ref;
 }
-declare module '*.avif' {
+declare module "*.avif" {
   const ref: string;
   export default ref;
 }
