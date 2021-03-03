@@ -41,7 +41,7 @@ export default function App() {
         <div className="footer">
           <a href="https://learnui.design/tools/gradient-generator.html">
             HCL gradients
-          </a>
+          </a>{" "}
           <a href="https://colors-v1.sokolov.cc/">
             HSL color picker
           </a>{" "}
