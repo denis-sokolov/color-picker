@@ -39,8 +39,11 @@ export default function App() {
         <div style={{ height: 200 }} />
 
         <div className="footer">
+          <a href="https://learnui.design/tools/gradient-generator.html">
+            HCL gradients
+          </a>
           <a href="https://colors-v1.sokolov.cc/">
-            Previous version with HSL tooling
+            HSL color picker
           </a>{" "}
           <a href="https://github.com/denis-sokolov/color-picker">GitHub</a>
         </div>
